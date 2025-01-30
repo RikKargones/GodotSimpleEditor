@@ -16,7 +16,7 @@ Most of additinal code is actual edit cell values/formulas and saving xlsx files
 - **Creating something bigger then cell** - sheets, styles and file itself.
 - **Calculating formula result in cell**
 
-## Differenses inside used addons:
+## Differences inside used addons:
 
 ### Godot Excel Reader:
 - **Really checking file validness** - no crash happening while trying to open xls file, non-xlsx file or corrupted xlsx. Needed data for read/edit are checked on opening.
