@@ -3,9 +3,9 @@ A very simple Excel .xlsx file editor writed in pure GDScript.
 
 Created for task on work - writing data (only values/formulas) in cells.
 
-Code uses a bit changed [GodotXML addon by elenakrittik](https://github.com/elenakrittik/GodotXML) and stracturly following [Godot Excel Reader addon by LaoDie1](https://github.com/LaoDie1/godot-excel-reader?ysclid=m6j75bap25275265483).
+Code uses a bit changed [GodotXML addon by elenakrittik](https://github.com/elenakrittik/GodotXML) and structurally following [Godot Excel Reader addon by LaoDie1](https://github.com/LaoDie1/godot-excel-reader?ysclid=m6j75bap25275265483).
 
-Most of additinal code is a an actual edit cell values/formulas and saving xlsx files.
+Most of additinal code is actual edit cell values/formulas and saving xlsx files.
 
 ## What SimpleXlsxEditor CAN do:
 - **Edit cells inside sheets.**
@@ -16,7 +16,7 @@ Most of additinal code is a an actual edit cell values/formulas and saving xlsx 
 - **Creating something bigger then cell** - sheets, styles and file itself.
 - **Calculating formula result in cell**
 
-## SimpleXlsxEditor differenses inside addons:
+## SimpleXlsxEditor differenses inside used addons:
 ### Godot Excel Reader:
 - **Really checking file validness** - no crash happening while trying to open xls file, non-xlsx file or corrupted xlsx. Needed for read/edit data are checked on opening.
 - **Replaced XML reader code** - original one only reads data from XML files inside xlsx. GodotXML allows edit data.
