@@ -18,7 +18,7 @@ Most of additinal code is actual edit cell values/formulas and saving xlsx files
 
 ## SimpleXlsxEditor differenses inside used addons:
 ### Godot Excel Reader:
-- **Really checking file validness** - no crash happening while trying to open xls file, non-xlsx file or corrupted xlsx. Needed for read/edit data are checked on opening.
+- **Really checking file validness** - no crash happening while trying to open xls file, non-xlsx file or corrupted xlsx. Needed data for read/edit are checked on opening.
 - **Replaced XML reader code** - original one only reads data from XML files inside xlsx. GodotXML allows edit data.
 ### GodotXML
 - **Seeking and collecting funcs** - as *seek_first_child_by_name()* and *get_childs_by_name()*.
