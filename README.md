@@ -35,8 +35,6 @@ Most of additinal code is actual edit cell values/formulas and saving xlsx files
 
 **ExcelSheet.set_cell()** doesn't know about merged cells.
 
-**ExcelSheet.set_cells_range()** doesn't accepts PackedStringArray's, but technically should.
-
 
 ## How to use:
 
@@ -171,11 +169,11 @@ Sets one or multiple cells inside xlsx sheet. Returns **OK** on edit success.
 
 Parameter __*range_str*__ can be one cell adress ("A1") or cells range ("A1:B7"). Incorrect ranges as "B1:A4", "A6:C5" or "F3:A1" will be fixed to normal top-left and right-bottom pairs.
 
-Allowed value type for parameter __*data*__ is int, float, String, PackedInt32Array, PackedInt64Array, PackedFloat32Array, PackedFloat64Array and Array. In other cases function will return **ERR_INVALID_DATA**.
+Allowed value type for parameter __*data*__ is int, float, String, PackedStringArray, PackedInt32Array, PackedInt64Array, PackedFloat32Array, PackedFloat64Array and Array. In other cases function will return **ERR_INVALID_DATA**.
 
 In case of passed arrays, values will be assigned element by element in right-to-left and top-to-bottom order, until reaching end of array or cells range. Invalid values from usual Array will be skipped with cell instead of returning error.
 
-If __*is_formula*__ are true, sets cell formula instead of value. In this case, only Strings are allowed as data (PackedStringArray support will be writed a bit later). Also "=" symbol at begining will be trimmed.
+If __*is_formula*__ are true, sets cell formula instead of value. In this case, only Strings, Arrays and PackedStringArrays are allowed as data. Also "=" symbol at begining will be trimmed.
 
 ```GDScript
 sheets.set_cells_range("A1:B8", 3)                         # Sets all cells value to 3 in range "A1:B8"
