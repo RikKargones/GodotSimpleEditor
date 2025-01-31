@@ -462,15 +462,21 @@ func set_cells_range(range_str : String, data, is_formula : bool = false) -> Err
 	var size_r 	: int 		= coord_two.y - coord_one.y + 1
 	
 	var err 	: Error
-	
-	match typeof(data):
+
+	var data_type	: int = typeof(data)
+
+	if is_formula && !(data_type == TYPE_STRING || data_type == TYPE_ARRAY || data_type == TYPE_PACKED_STRING_ARRAY):
+		return ERR_INVALID_DATA
+
+	match data_type:
 		TYPE_STRING, TYPE_INT, TYPE_FLOAT:
+			
 			for row in size_r:
 				for column in size_c:
 					err = set_cell(coord_one + Vector2i(column, row), data, is_formula)
 					if err != OK && err != ERR_INVALID_PARAMETER: return err
 			
-		TYPE_ARRAY, TYPE_PACKED_FLOAT32_ARRAY, TYPE_PACKED_FLOAT64_ARRAY, TYPE_PACKED_INT32_ARRAY, TYPE_PACKED_INT64_ARRAY:
+		TYPE_ARRAY, TYPE_PACKED_STRING_ARRAY, TYPE_PACKED_FLOAT32_ARRAY, TYPE_PACKED_FLOAT64_ARRAY, TYPE_PACKED_INT32_ARRAY, TYPE_PACKED_INT64_ARRAY:
 			for row in size_r:
 				for column in size_c:
 					var idx : int = column + row * size_c
